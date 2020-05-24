@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 fabric3 = "*"
+autopep8 = "*"
 
 [packages]
 django = "==3.0.6"
@@ -12,8 +13,6 @@ python-decouple = "*"
 psycopg2 = "*"
 django-summernote = "*"
 "psycopg2-binary" = "*"
-
-
 
 [requires]
 python_version = "3.7"
