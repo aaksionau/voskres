@@ -1,0 +1,13 @@
+*.pyc
+*.log
+settings.json
+.env
+Pipfile.lock
+package-lock.json
+
+**/media
+/.vscode
+__pycache__
+/static
+*/htmlcov
+**/flake-report
