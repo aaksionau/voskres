@@ -114,6 +114,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
