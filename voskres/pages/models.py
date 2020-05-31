@@ -8,7 +8,6 @@ class BlogPost(models.Model):
         ('P', 'Poem'),
     )
     title = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, blank=True, null=True)
     description = models.TextField(null=True, blank=True)
     post_type = models.CharField(max_length=1, choices=BLOGPOST_TYPES)
     created = models.DateTimeField(auto_now_add=True)
@@ -20,7 +19,7 @@ class BlogPost(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blogpost-detail', kwargs={'slug': self.slug})
+        return reverse('blogpost-detail', kwargs={'id': self.id})
 
 
 class Feedback(models.Model):

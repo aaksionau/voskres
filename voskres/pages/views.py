@@ -1,7 +1,13 @@
 from django.utils import timezone
 from django.views.generic.detail import DetailView
+from django.shortcuts import render
 
 from .models import BlogPost
+
+
+class HomePageView(View):
+    def get(self, request):
+        return render(request, 'pages/home.html')
 
 
 class BlogPostDetailView(DetailView):

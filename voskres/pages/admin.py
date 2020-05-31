@@ -6,7 +6,7 @@ from .models import BlogPost, Feedback
 
 @admin.register(BlogPost)
 class AdminBlogPost(SummernoteModelAdmin):
-    list_display = ('title', 'slug', 'post_type', 'created', 'modified')
+    list_display = ('title', 'post_type', 'created', 'modified')
     list_filter = ('post_type',)
 
 
