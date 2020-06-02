@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+  <section class="section articles">
+    <div class="container">
+      <h1 class="title">
+        Статьи и проповеди
+      </h1>
+    </div>
+    <div>
+        {% for blogpost in blogposts %}
+            <span class="tag is-light">{{blogpost.get_post_type_display}}</span>
+            <h4 class="title is-4"><a href="{{ blogpost.get_absolute_url }}" alt="{{blogpost.title}}"> {{blogpost.title}}</a></h4>
+        {% endfor %}
+    </div>
+  </section>
+{% endblock content %}
