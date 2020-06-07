@@ -2,17 +2,29 @@
 {% load static %} 
 
 {% block content %}
-  <section class="section articles">
-    <div class="container">
+  <main class="container">
       <h1 class="title">
         Статьи и проповеди
       </h1>
     </div>
-    <div>
-        {% for blogpost in blogposts %}
-            <span class="tag is-light">{{blogpost.get_post_type_display}}</span>
-            <h4 class="title is-4"><a href="{{ blogpost.get_absolute_url }}" alt="{{blogpost.title}}"> {{blogpost.title}}</a></h4>
-        {% endfor %}
-    </div>
-  </section>
+    {% for blogpost in blogposts %}
+      {% include 'pages/blogpost.html' with blogpost=blogpost %}
+    {% endfor %}
+</main>
+    <footer>
+      <div class="container">
+        <h4 class="title is-4">Об авторе</h4>
+        <img src="{% static 'img/oleg.jpg'%}" class="author"/>
+        <p class="is-inline">Олег Воскресенский - "вечный студент" (родился в Татьянин День) – закончил <a href="http://www.mpgu.ru/">пединститут</a>
+         (филфак), бесконечное <a href="http://www.glasnet.ru/~stphilaret/">количество курсов и семинаров</a>, 
+         учился в <a href="http://www.geocities.com/Athens/Styx/4562/diocese.html">православной семинарии</a>, 
+         закончил – <a href="http://www.bethel.edu/seminary/btshome.htm"> евангельскую (M.Div.)</a> и снова <a href="http://www.bethel.edu/">
+         учился (M.A. in Communications)</a>. Работал учителем и экскурсоводом, помогал беженцам начать новую жизнь в Америке (<a href="http://www.wr.org/us/offices/minnesota.html">World Relief</a>).
+          Преподаёт курс по теме <a href="http://www.faithsearch.org/rus">"Разумного, научно-исторического основания христианской веры"</a> 
+          и работает над кандидатской диссертацией в Институте теории и истории педагогики РАО. 
+          Автор школьных учебников для 4 класса по "Основам православной культуры" и "Основам мировых религиозных культур". 
+          С 1991 года живёт в США. Женат, трое детей и трое внуков. Алтарник русской <a href="http://www.resurrectionskete.org/">
+          православной церкви Воскресения Христова во Фридли</a>, штат Миннесота. См. фотоальбомы на <a href="http://www.resurrectionskete.org/">Фотоархив</a></p>
+      </div>
+    </footer>
 {% endblock content %}

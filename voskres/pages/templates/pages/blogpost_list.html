@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+<div class="container">
+    <h1 class="title is-2">Записи</h1>
+    {% for blogpost in blogposts %}
+      {% include 'pages/blogpost.html' with blogpost=blogpost %}
+    {% endfor %}
+
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <ul class="pagination-list">
+            <li>
+                {% if page_obj.has_previous %}
+                    <a class="pagination-link" href="?page=1">&laquo; предыдущая</a>
+                {% endif %}
+            </li>
+            <li>
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </li>
+            <li>
+                {% if page_obj.has_next %}
+                    <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">следующая &raquo;</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block content %}
+<section class="container">
+    <h2 class="title is-2">Обратная связь</h2>
+    <div class="columns">
+        <div class="column">
+        <form action="/contacts/" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="field">
+                {{ form.name.errors }}
+                {{ form.name }}
+            </div>
+            <div class="field">
+                {{ form.email.errors }}
+                {{ form.email }}
+            </div>
+            <div class="field">
+                {{ form.subject.errors }}
+                {{ form.subject }}
+            </div>
+            <div class="field">
+                {{ form.message.errors }}
+                {{ form.message }}
+            </div>
+            <div class="field">
+                {{ form.cc_myself.errors }}
+                <label class="label" for="{{ form.cc_myself.id_for_label }}">Отправить копию себе?</label>
+                {{ form.cc_myself }}
+            </div>
+            <button class="button is-link">Отправить</button>
+        </form>
+        </div>
+        <div class="column"></div>
+    </div>
+</section>
+
+{% endblock %}
