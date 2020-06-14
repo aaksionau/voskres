@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="{% static 'css/site.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+      .fullpage{
+        max-width: 920px;
+      }
+    </style>
   </head>
   <body>
+  <div class="container fullpage">
         {% include 'navigation.html' %}
         <img src="{% static 'img/main_photo.jpg'%}"/>
+        <main style="margin-top: 40px">
         {% block content %}
         {% endblock content %}
+        </main>
+  </div>
         <script>
           document.addEventListener('DOMContentLoaded', () => {
 

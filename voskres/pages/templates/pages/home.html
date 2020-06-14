@@ -2,17 +2,7 @@
 {% load static %} 
 
 {% block content %}
-  <main class="container">
-      <h1 class="title">
-        Статьи и проповеди
-      </h1>
-    </div>
-    {% for blogpost in blogposts %}
-      {% include 'pages/blogpost.html' with blogpost=blogpost %}
-    {% endfor %}
-</main>
-    <footer>
-      <div class="container">
+
         <h4 class="title is-4">Об авторе</h4>
         <img src="{% static 'img/oleg.jpg'%}" class="author"/>
         <p class="is-inline">Олег Воскресенский - "вечный студент" (родился в Татьянин День) – закончил <a href="http://www.mpgu.ru/">пединститут</a>
@@ -25,6 +15,5 @@
           Автор школьных учебников для 4 класса по "Основам православной культуры" и "Основам мировых религиозных культур". 
           С 1991 года живёт в США. Женат, трое детей и трое внуков. Алтарник русской <a href="http://www.resurrectionskete.org/">
           православной церкви Воскресения Христова во Фридли</a>, штат Миннесота. См. фотоальбомы на <a href="http://www.resurrectionskete.org/">Фотоархив</a></p>
-      </div>
-    </footer>
+
 {% endblock content %}

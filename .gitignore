@@ -1,6 +1,7 @@
 *.pyc
 *.log
 settings.json
+settings.py
 .env
 Pipfile.lock
 package-lock.json

@@ -4,9 +4,9 @@ from django.urls import reverse
 
 class BlogPost(models.Model):
     BLOGPOST_TYPES = (
-        ('sermon', 'Проповедь'),
-        ('article', 'Статья'),
-        ('poem', 'Стих'),
+        ('sermon', 'Проповеди'),
+        ('article', 'Статьи и рассказы'),
+        ('poem', 'Стихи'),
     )
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)

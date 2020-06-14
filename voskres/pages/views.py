@@ -10,8 +10,7 @@ from .forms import FeedbackForm
 
 class HomePageView(View):
     def get(self, request):
-        blogposts = BlogPost.objects.all()[:7]
-        return render(request, 'pages/home.html', {'blogposts': blogposts})
+        return render(request, 'pages/home.html')
 
 
 class BlogPostDetailView(DetailView):

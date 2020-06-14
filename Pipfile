@@ -9,10 +9,8 @@ autopep8 = "*"
 
 [packages]
 django = "==3.0.6"
-python-decouple = "*"
-psycopg2 = "*"
 django-summernote = "*"
-"psycopg2-binary" = "*"
+psycopg2 = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
